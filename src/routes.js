@@ -19,6 +19,7 @@ routes.put('/users', UserController.update);
 routes.get('/providers', ProviderController.index);
 routes.get('/appointments', AppointmentController.index);
 routes.post('/appointments', AppointmentController.store);
+routes.delete('/appointments/:id', AppointmentController.delete);
 routes.get('/schedule', ScheduleController.index);
 routes.get('/notifications', NotificationController.index);
 routes.put('/notifications/:id', NotificationController.update);
