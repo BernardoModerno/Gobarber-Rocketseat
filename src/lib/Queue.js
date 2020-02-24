@@ -3,6 +3,7 @@ import CancellationMail from '../app/jobs/CancellationMail';
 import redisConfig from '../config/redis';
 
 const jobs = [CancellationMail];
+
 class Queue {
   constructor() {
     this.queues = {};
@@ -28,6 +29,7 @@ class Queue {
   processQueue() {
     jobs.forEach(job => {
       const { bee, handle } = this.queues[job.key];
+
       bee.on('failed', this.handleFailure).process(handle);
     });
   }
