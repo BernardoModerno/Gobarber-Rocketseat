@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import path from 'path';
 import Youch from 'youch';
@@ -36,6 +37,7 @@ class App {
 
       return res.status(500).json(errors);
     });
+    return res.status(500).json({ error: 'Internal server error' });
   }
 }
 
